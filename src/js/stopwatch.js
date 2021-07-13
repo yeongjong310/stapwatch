@@ -10,6 +10,10 @@ const formatElapsedTime = (() => {
     return ({hh, mm, ss, ms}) => `${format(hh)}:${format(mm)}:${format(ss)}.${format(ms)}`;
 })();
 
+const renderElaspsedTime = (()=> {
+    $watch.textContent = formatElapsedTime(elapsedTime);
+})
+
 const timer = (()=> {
     let timerId = null;
     let {hh, mm, ss, ms} = elapsedTime;
