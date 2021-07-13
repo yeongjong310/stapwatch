@@ -25,6 +25,9 @@ const timer = (()=> {
         stop(){
             clearInterval(timerId);
         },
+        reset(){
+            elapsedTime = {hh:0, mm:0, ss:0, ms:0};
+        }
     }
 
     
