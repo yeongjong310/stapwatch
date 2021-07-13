@@ -22,7 +22,9 @@ const timer = (()=> {
                 elapsedTime = {hh, mm, ss, ms};
             }, 10);
         },
-        
+        stop(){
+            clearInterval(timerId);
+        },
     }
 
     
