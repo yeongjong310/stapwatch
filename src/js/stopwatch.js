@@ -16,12 +16,11 @@ const laps = (() => {
     } = elapsedTime;
 
     $lap.textContent = `${formatDigits(hh)}:${formatDigits(mm)}:${formatDigits(ss)}:${ms}`;
+    $laps.appendChild($lap);
   };
 
   return { add };
 })();
-
-laps.add();
 
 const renderButtons = (() => {
   const $buttons = document.querySelector('.buttons');
