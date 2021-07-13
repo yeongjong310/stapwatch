@@ -1,4 +1,4 @@
-const elapsedTime = {hh:0, mm:0, ss:0, ms:0};
+let elapsedTime = {hh:0, mm:0, ss:0, ms:0};
 
 const timer = (()=> {
     let timerId = null;
@@ -19,6 +19,7 @@ const timer = (()=> {
                     hh += 1;
                     mm = 0;
                 }
+                elapsedTime = {hh, mm, ss, ms};
             }, 10);
         },
         
