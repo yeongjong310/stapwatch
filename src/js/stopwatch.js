@@ -1,4 +1,6 @@
+//state
 let elapsedTime = {hh:0, mm:0, ss:0, ms:0};
+let watchState = 'reset';
 
 const timer = (()=> {
     let timerId = null;
@@ -30,3 +32,23 @@ const timer = (()=> {
         }
     }    
 })();
+
+const renderButton = (() => {
+    const $buttons = document.querySelector('.buttons');
+    
+    const buttonsText = {
+      'reset': ['Start', 'Lap', 'Reset'],
+      'run': ['Stop', 'Lap', 'Reset'],
+      'pause': ['Start', 'Lap', 'Reset'],
+    }
+  
+    return state => {
+      $buttons.innerHTML = buttonsText[watchState].reduce((acc, text) => acc + `<button class="button">${text}</button>`, '');
+    }
+  })();
+  
+  document.addEventListener('DOMContentLoaded',
+    () => {
+      renderButton(watchState);
+    }
+  );
