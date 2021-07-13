@@ -2,6 +2,14 @@
 let elapsedTime = {hh:0, mm:0, ss:0, ms:0};
 let watchState = 'reset';
 
+//DOM
+const $watch = document.querySelector('.watch');
+
+const formatElapsedTime = (() => {
+    const format = n => (n < 10 ? '0' + n : n + '');
+    return ({hh, mm, ss, ms}) => `${format(hh)}:${format(mm)}:${format(ss)}.${format(ms)}`;
+})();
+
 const timer = (()=> {
     let timerId = null;
     let {hh, mm, ss, ms} = elapsedTime;
