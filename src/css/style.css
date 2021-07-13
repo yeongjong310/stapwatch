@@ -11,6 +11,10 @@
   text-align: center;
 }
 
+.watch {
+  font-size: 60px;
+}
+
 .buttons {
   display: flex;
   width: 100%;
